@@ -106,17 +106,14 @@ module alutb ();
 
     instruction = 0;
     clk = 0;
-    enable_write = 1;
-	 
+    enable_write = 0;
     instruction[15:12] = 0;
-    instruction[11:8] = 15;
+    instruction[11:8] = 3;
     instruction[7:4] = 7;
     instruction[3:0] = 3;
     
     #5 
-    instruction[11:8] = 3;
-    instruction[7:4] = 7;
-    instruction[3:0] = 3;
+    enable_write = 1;
 
     #100 $finish;
   end
