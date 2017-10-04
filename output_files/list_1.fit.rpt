@@ -1,5 +1,5 @@
 Fitter report for list_1
-Tue Sep 19 13:43:50 2017
+Tue Oct  3 17:00:04 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -57,7 +57,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Tue Sep 19 13:43:50 2017       ;
+; Fitter Status                   ; Successful - Tue Oct  3 17:00:04 2017       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; list_1                                      ;
 ; Top-level Entity Name           ; list_1                                      ;
@@ -1106,7 +1106,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.07 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.05 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1114,8 +1114,8 @@ Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 2190 megabytes
-    Info: Processing ended: Tue Sep 19 13:43:51 2017
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:44
+    Info: Processing ended: Tue Oct  3 17:00:05 2017
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:42
 
 

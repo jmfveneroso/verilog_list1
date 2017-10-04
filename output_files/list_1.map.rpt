@@ -1,5 +1,5 @@
 Analysis & Synthesis report for list_1
-Tue Sep 19 13:43:22 2017
+Tue Oct  3 16:59:37 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -16,13 +16,15 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   8. General Register Statistics
   9. Parameter Settings for User Entity Instance: exercise4tb:e4tb|exercise4:e4
  10. Parameter Settings for User Entity Instance: exercise6tb:e6tb|exercise6:e6
- 11. Port Connectivity Checks: "exercise7tb:e7tb|exercise7:e7"
- 12. Port Connectivity Checks: "exercise6tb:e6tb|exercise6:e6"
- 13. Port Connectivity Checks: "exercise5tb:e5tb|exercise5:e5"
- 14. Port Connectivity Checks: "exercise4tb:e4tb|exercise4:e4"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 11. Port Connectivity Checks: "alutb:alu1tb|alu:alu1"
+ 12. Port Connectivity Checks: "alutb:alu1tb|exercise7:register_file"
+ 13. Port Connectivity Checks: "exercise7tb:e7tb|exercise7:e7"
+ 14. Port Connectivity Checks: "exercise6tb:e6tb|exercise6:e6"
+ 15. Port Connectivity Checks: "exercise5tb:e5tb|exercise5:e5"
+ 16. Port Connectivity Checks: "exercise4tb:e4tb|exercise4:e4"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -49,7 +51,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Sep 19 13:43:22 2017       ;
+; Analysis & Synthesis Status     ; Successful - Tue Oct  3 16:59:37 2017       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; list_1                                      ;
 ; Top-level Entity Name           ; list_1                                      ;
@@ -182,6 +184,7 @@ agreement for further details.
 ; exercise6.v                      ; yes             ; User Verilog HDL File  ; /home/joao/Code/computer_architecture/list_1/exercise6.v ;         ;
 ; exercise5.v                      ; yes             ; User Verilog HDL File  ; /home/joao/Code/computer_architecture/list_1/exercise5.v ;         ;
 ; list_1.v                         ; yes             ; User Verilog HDL File  ; /home/joao/Code/computer_architecture/list_1/list_1.v    ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File  ; /home/joao/Code/computer_architecture/list_1/alu.v       ;         ;
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------+---------+
 
 
@@ -266,6 +269,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alutb:alu1tb|alu:alu1"                                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "alutb:alu1tb|exercise7:register_file" ;
++------------+-------+----------+----------------------------------+
+; Port       ; Type  ; Severity ; Details                          ;
++------------+-------+----------+----------------------------------+
+; write_data ; Input ; Info     ; Stuck at GND                     ;
++------------+-------+----------+----------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "exercise7tb:e7tb|exercise7:e7"                                                             ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -333,7 +354,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Sep 19 13:43:11 2017
+    Info: Processing started: Tue Oct  3 16:59:26 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off list_1 -c list_1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -361,6 +382,9 @@ Info (12021): Found 2 design units, including 2 entities, in source file exercis
     Info (12023): Found entity 2: exercise5tb File: /home/joao/Code/computer_architecture/list_1/exercise5.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file list_1.v
     Info (12023): Found entity 1: list_1 File: /home/joao/Code/computer_architecture/list_1/list_1.v Line: 2
+Info (12021): Found 2 design units, including 2 entities, in source file alu.v
+    Info (12023): Found entity 1: alu File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 4
+    Info (12023): Found entity 2: alutb File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 30
 Warning (10236): Verilog HDL Implicit Net warning at exercise3.v(35): created implicit net for "carry_out" File: /home/joao/Code/computer_architecture/list_1/exercise3.v Line: 35
 Info (12127): Elaborating entity "list_1" for the top level hierarchy
 Warning (10034): Output port "output_tmp" at list_1.v(2) has no driver File: /home/joao/Code/computer_architecture/list_1/list_1.v Line: 2
@@ -416,6 +440,27 @@ Info (12128): Elaborating entity "exercise7tb" for hierarchy "exercise7tb:e7tb" 
 Warning (10175): Verilog HDL warning at exercise7.v(82): ignoring unsupported system task File: /home/joao/Code/computer_architecture/list_1/exercise7.v Line: 82
 Warning (10755): Verilog HDL warning at exercise7.v(86): assignments to clk create a combinational loop File: /home/joao/Code/computer_architecture/list_1/exercise7.v Line: 86
 Info (12128): Elaborating entity "exercise7" for hierarchy "exercise7tb:e7tb|exercise7:e7" File: /home/joao/Code/computer_architecture/list_1/exercise7.v Line: 60
+Info (12128): Elaborating entity "alutb" for hierarchy "alutb:alu1tb" File: /home/joao/Code/computer_architecture/list_1/list_1.v Line: 8
+Warning (10175): Verilog HDL warning at alu.v(93): ignoring unsupported system task File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 93
+Warning (10855): Verilog HDL warning at alu.v(62): initial value for variable write_data_reg should be constant File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 62
+Warning (10755): Verilog HDL warning at alu.v(97): assignments to clk create a combinational loop File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 97
+Warning (10030): Net "write_data_reg" at alu.v(39) has no driver or initial value, using a default initial value '0' File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 39
+Info (12128): Elaborating entity "alu" for hierarchy "alutb:alu1tb|alu:alu1" File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 58
+Warning (10230): Verilog HDL assignment warning at alu.v(16): truncated value with size 32 to match size of target (16) File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 16
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "alutb:alu1tb|instruction[11]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[10]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[9]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[8]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[7]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[6]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[5]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[4]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[3]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[2]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[1]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|instruction[0]" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 31
+    Warning (12110): Net "alutb:alu1tb|clk" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/alu.v Line: 37
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "exercise7tb:e7tb|clk" is missing source, defaulting to GND File: /home/joao/Code/computer_architecture/list_1/exercise7.v Line: 49
 Warning (12011): Net is missing source, defaulting to GND
@@ -429,10 +474,10 @@ Warning (21074): Design contains 1 input pin(s) that do not drive logic
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 1 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 988 megabytes
-    Info: Processing ended: Tue Sep 19 13:43:22 2017
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 61 warnings
+    Info: Peak virtual memory: 989 megabytes
+    Info: Processing ended: Tue Oct  3 16:59:37 2017
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Total CPU time (on all processors): 00:00:22
 
 

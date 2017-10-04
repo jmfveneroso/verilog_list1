@@ -5,5 +5,6 @@ exercise4tb e4tb ();
 exercise5tb e5tb ();
 exercise6tb e6tb ();
 exercise7tb e7tb ();
+alutb alu1tb ();
 
 endmodule 
